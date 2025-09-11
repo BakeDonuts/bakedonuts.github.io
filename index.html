@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bake Donuts – Roblox Game</title>
+
+  <!-- Comic Neue Angular via Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* — Reset & Utility — */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* — Global Font Family — */
+    body {
+      font-family: 'Comic Neue', cursive;
+      line-height: 1.6;
+      background: #fdf3e7;
+      color: #333;
+    }
+
+    /* — Loader Screen — */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #fdf3e7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+    .donut-spinner {
+      width: 80px;
+      height: 80px;
+      border: 12px solid #f8c291;
+      border-top-color: #e77f67;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    #loader p {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      color: #e77f67;
+    }
+
+    /* — Nav Bar — */
+    nav {
+      background: #eb2f06;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 500;
+    }
+    nav .logo {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 6px 10px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+    }
+
+    /* — Page Content — */
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #d35400;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .visit-counter {
+      display: inline-block;
+      background: #f8c291;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: #cb4335;
+    }
+
+    /* — Footer — */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f0e5d8;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="donut-spinner"></div>
+    <p>Loading Bake Donuts…</p>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="logo">Bake Donuts</a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li>
+        <a href="https://www.roblox.com/games/110295270925302/" target="_blank" rel="noopener">
+          Play
+        </a>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Bake Donuts!</h1>
+    <p>Your favorite Roblox bakery simulation—where you bake, stack, and customize the wackiest donuts ever.</p>
+    <div class="visit-counter">Almost 650 visits!</div>
+  </section>
+
+  <!-- Placeholder Sections -->
+  <section id="about" style="padding: 40px 20px;">
+    <h2>About the Game</h2>
+    <p>In Bake Donuts, you start with a small bakery and unlock crazy flavors. Compete with friends, decorate your shop, and climb the leaderboards.</p>
+  </section>
+
+  <section id="gallery" style="padding: 40px 20px; background: #fff;">
+    <h2>Gallery</h2>
+    <p>Check out user-shared donut creations and shop interiors.</p>
+  </section>
+
+  <section id="contact" style="padding: 40px 20px;">
+    <h2>Contact & Support</h2>
+    <p>Questions or feedback? Reach out on our Discord or Roblox group.</p>
+  </section>
+
+  <footer>
+    © 2025 Bake Donuts • Built on GitHub Pages
+  </footer>
+
+  <!-- Loader Script -->
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = '0';
+      setTimeout(() => loader.remove(), 500);
+    });
+  </script>
+</body>
+</html>
